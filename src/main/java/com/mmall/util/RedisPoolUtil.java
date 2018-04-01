@@ -80,7 +80,7 @@ public class RedisPoolUtil {
         return result;
     }
 
-    public static Long del(String key) {
+    public static Long  del(String key) {
         Jedis jedis = null;
         Long result = null;
         try {
