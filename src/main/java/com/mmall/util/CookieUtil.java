@@ -42,11 +42,19 @@ public class CookieUtil {
         }
         return null;
     }
+//a:A.happymmall.com   cookie:domail=A.
+    //b:B.happygomall.com
+    //c:A.happymmall.com/test/dd
+    //d:A.happymmall.com/test/cc
+    //e:A.happymmall.com/test
+
+
 
     public static void writeLoginToken(HttpServletResponse response, String token) {
         Cookie ck;
         ck = new Cookie(COOKIE_NAME, token);
         ck.setDomain(COOKIE_DOMAIN);
+        ck.setHttpOnly(true);
         ck.setPath("/");//设置在根目录
         ck.setMaxAge(60 * 60 * 24 * 365);//一年
         log.info("write cookieName:{},cookieValue:{}", ck.getName(), ck.getValue());
