@@ -53,7 +53,7 @@ public class CookieUtil {
     public static void writeLoginToken(HttpServletResponse response, String token) {
         Cookie ck;
         ck = new Cookie(COOKIE_NAME, token);
-        ck.setDomain(COOKIE_DOMAIN);
+      //  ck.setDomain(COOKIE_DOMAIN);
         ck.setHttpOnly(true);
         ck.setPath("/");//设置在根目录
         ck.setMaxAge(60 * 60 * 24 * 365);//一年
